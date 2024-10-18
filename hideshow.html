@@ -1,0 +1,28 @@
+<html></html>
+    <head>
+        <title>hideandshow</title>
+    </head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+             flag=true;
+             setInterval(function(){
+                if(flag==true){
+                    $("h1").hide();
+                    flag=false;
+                }
+                else{
+                    $("h1").show();
+                    flag=true;
+                }
+             },1000)
+        })
+    </script>
+    <body>
+        <center>
+        <h1 style="color:rgb(185, 173, 230)">
+            This element hides periodically!
+            </h1>
+            </center>
+     </body>
+</html>
