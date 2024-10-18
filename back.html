@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>BACKGROUND-COLORS</title>
+    </head>
+    <script>
+        function change() {
+            var r=Math.random();
+            var c=Math.floor(r*10**6);
+            var col="#"+(c);
+            document.body.style.backgroundColor=col;
+        }
+    </script>
+    <body>
+        <center><h1>Changing the background color!!</h1>
+        <input type="button" value="change color" onClick="change()">
+    <br><br>
+   </center>
+    </body>
+</html>

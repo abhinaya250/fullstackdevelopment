@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <title>jQuery Simple Star Rating Example</title>
+    <style>
+        body {
+            background-color: rgb(185, 164, 125);
+            margin: 0px;
+        }
+        .fa-star {
+            font-size: 50px;
+            align-content: center;
+        }
+        .container {
+            height: 100px;
+            width: 600px;
+            margin: auto;
+        }
+        .rating-display {
+            margin-top: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 style="margin-top: 20px">12th Fail</h2>
+        <img src="pos.jpeg" alt="12th Fail">
+        <h3 style="margin-top: 20px">Rate the Movie:</h3>
+        <div class="con">
+            <i class="fa fa-star" aria-hidden="true" id="st1"></i>
+            <i class="fa fa-star" aria-hidden="true" id="st2"></i>
+            <i class="fa fa-star" aria-hidden="true" id="st3"></i>
+            <i class="fa fa-star" aria-hidden="true" id="st4"></i>
+            <i class="fa fa-star" aria-hidden="true" id="st5"></i>
+        </div>
+        <div class="rating-display" id="rating-display"></div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $(".fa-star").click(function() {
+                var starId = $(this).attr('id'); // Get the ID of the clicked star
+                var rating = starId.charAt(starId.length - 1); // Get the rating number (1 to 5)
+                
+                // Reset all stars to black
+                $(".fa-star").css("color", "black");
+                // Set the clicked star and all previous stars to gold
+                $("#" + starId).css("color", "#FFD700");
+                $("#" + starId).prevAll().css("color", "#FFD700");
+
+                // Display the rating
+                $("#rating-display").text("You rated this movie: " + rating + " star(s)");
+            });
+        });
+    </script>
+</body>
+</html>

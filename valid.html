@@ -1,0 +1,108 @@
+<html>
+<head>
+    <title>Login Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        .form-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background: #0056b3;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .success {
+            color: green;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Login</h2>
+        <form id="loginForm" onsubmit="return validateForm()">
+            <div class="error" id="error-message"></div>
+            <div class="success" id="success-message"></div>
+            <input type="text" id="username" name="username" placeholder="Username">
+            <input type="email" id="email" name="email" placeholder="Email">
+            <input type="password" id="password" name="password" placeholder="Password">
+            <input type="submit" value="Login">
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+           
+            document.getElementById('error-message').textContent = '';
+            document.getElementById('success-message').textContent = '';
+
+        
+            var username = document.getElementById('username').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+    
+            if (username.length < 8 || username.length > 16) {
+                document.getElementById('error-message').textContent = 'Username must be between 8 and 16 characters long.';
+                return false; 
+            }
+
+    
+            var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!emailPattern.test(email)) {
+                document.getElementById('error-message').textContent = 'Please enter a valid email address (e.g., example@domain.com).';
+                return false; 
+            }
+
+            
+            var passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[\d])(?=.*[#@&])[A-Za-z\d#@&]{8,}$/;
+            if (!passwordPattern.test(password)) {
+                document.getElementById('error-message').textContent = 'Password must be at least 8 characters long, include at least one uppercase letter, one lowercase letter, one numeric digit, and one special character (#, @, or &).';
+                return false; 
+            }
+
+    
+            document.getElementById('success-message').textContent = 'Successfully logged in!';
+            return false; 
+        }
+    </script>
+
+</body>
+</html>
