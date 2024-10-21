@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<body>
+    <h2>Registration Form</h2>
+    <form action="#" method="post">
+        <!-- Username -->
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username" required><br><br>
+        
+        <!-- Password -->
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+        
+        <!-- Date of Birth -->
+        <label for="dob">Date of Birth:</label><br>
+        <input type="date" id="dob" name="dob" required><br><br>
+        
+        <!-- Gender -->
+        <label>Gender:</label><br>
+        <input type="radio" id="male" name="gender" value="male" required>
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br><br>
+        
+        <!-- Mail ID -->
+        <label for="mailid">Mail ID:</label><br>
+        <input type="email" id="mailid" name="mailid" required><br><br>
+        
+        <!-- Contact Number -->
+        <label for="contact">Contact Number:</label><br>
+        <input type="tel" id="contact" name="contact" pattern="[0-9]{10}" placeholder="1234567890" required><br><br>
+        
+        <!-- Address -->
+        <label for="address">Address:</label><br>
+        <textarea id="address" name="address" rows="4" cols="30" required></textarea><br><br>
+        
+        <!-- Submit Button -->
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newspaper Style Layout</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            
+        }
+        header {
+            text-align: center;
+            border-bottom: 4px solid #333;
+            margin-bottom: 20px;
+        }
+        header h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+        header p {
+            font-size: 20px;
+            margin: 0;
+        }
+
+        /* Dropdown Menu Styles */
+        .navbar {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            background-color: #333;
+            padding: 10px;
+        }
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .navbar ul li {
+            position: relative;
+        }
+        .navbar ul li a {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+        }
+        .navbar ul li:hover {
+            background-color: #555;
+        }
+        .navbar ul li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #333;
+            padding: 0;
+        }
+        .navbar ul li:hover ul {
+            display: block;
+        }
+        /* Article Styles */
+        .article {
+            columns: 3;
+            column-gap: 40px;
+            margin-bottom: 40px;
+        }
+        .article h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .article p {
+            font-size: 18px;
+            text-align: justify;
+        }
+        img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            display: block;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>The Daily News</h1>
+            <p>Your source for the latest news</p>
+        </header>
+
+        <!-- Horizontal Dropdown Menu -->
+        <nav class="navbar">
+            <ul>
+                <li><a href="#">Sports</a></li>
+                <li><a href="#">Business</a></li>
+                <li><a href="#">Latest</a>
+                    <!-- Dropdown items -->
+                    <ul>
+                        <li><a href="#">World News</a></li>
+                        <li><a href="#">Technology</a></li>
+                        <li><a href="#">Entertainment</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Article 1: Breaking News -->
+        <div class="article">
+            <h2>Breaking News: Market Hits Record High</h2>
+            <p>The stock market reached a new record high today as investors reacted positively to the latest economic reports. 
+                Analysts predict further gains in the coming months as the economy continues to recover from the recent downturn
+                In a dramatic development, India and China have reached an agreement on “patrolling arrangements ” a
+                nd a resolution of the military standoff at the Line of Actual Control (LAC) , the government announced on Monday (October 21, 2024). The patrolling arrangement agreement extends beyond the areas along the LAC where there has already been a disengagement of military personnel over the past few years, and include the so far unresolved areas of Demchok and Depsang, 
+                sources told The Hindu, indicating that the India-China standoff since April 2020 is now expected to be resolved..</p>
+            
+            <!-- Image in between paragraphs -->
+            <img src="markey.jpg" alt="Stock Market Image">
+            
+            <p>In other news, global markets also showed signs of strength, with major indices in Europe and Asia posting gains. The ongoing recovery is expected to continue as more countries lift restrictions and return to normalcy.</p>
+        </div>
+
+        <!-- Article 2: Tech Innovations -->
+        <div class="article">
+            <h2>Tech Innovations: AI Leading the Way</h2>
+            <p>Artificial Intelligence (AI) is rapidly transforming industries across the globe. From healthcare to finance, AI technologies are being integrated into various sectors to improve efficiency and productivity.</p>
+            
+            <!-- Image in between paragraphs -->
+            <img src="ai.jpg" alt="AI Technology Image">
+            
+            <p>Experts believe that AI will continue to play a crucial role in the future, with advancements in machine learning and automation expected to drive further innovation. Companies are investing heavily in AI research and development to stay ahead in the competitive market.</p>
+        </div>
+    </div>
+</body>
+</html>
